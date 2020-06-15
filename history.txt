@@ -1,0 +1,163 @@
+    7  docker -v
+    8  docker  version 
+   10  docker  version
+   13  docker  version
+   16  docker  version
+   17  docker  search   mysql 
+   18  docker  search   java
+   19  docker  search   hadoop
+   20  docker  search   rhel
+   21  docker  search   dockerashu
+   22  docker  search   ashutoshh
+   25  docker   images
+   26  docker   pull  centos
+   27  docker   images
+   28  docker   pull  mysql 
+   29  docker   images
+   30  docker   pull  java
+   31  docker   images
+   32  docker   pull  python 
+   33  docker   images
+   34  docker   pull  alpine
+   35  docker   images
+   36  docker   pull  busybox
+   37  docker   images
+   38  docker   search rhel
+   39  docker   pull richxsl/rhel7
+   40  docker   images
+   41  docker   search  cisco 
+   42  docker   search  ciscocsr
+   43  docker   search  csr1000v
+   44  docker  pull  csr1000v/csr1000v-azure
+   46  docker  images
+   47  docker  info 
+   48  cd /var/lib/docker/
+   56  docker  images
+   57  docker  run   alpine  cal 
+   58  docker  run   alpine  ping  fb.com 
+   60  docker   ps
+   61  docker   ps  -a
+   62  docker   ps  
+   63  docker   ps  -a
+   64  docker  run --name  ashuc1     alpine  ping  fb.com 
+   65  docker  ps -a
+   67     43  docker   search  csr1000v
+   68     44  docker  pull  csr1000v/csr1000v-azure
+   70     46  docker  images
+   72  docker run --name  ashuc2  -d  alpine  ping fb.com 
+   73  docker  ps
+   74  docker  logs  ashuc2  
+   76  docker  logs -f  ashuc2  
+   78  docker  ps
+   79  docker  ps  -a
+   80  docker  logs   heuristic_ride
+   81  docker  ps
+   82  docker  stop  ashuc2 
+   83  docker  ps
+   85  docker  ps
+   86  docker  start   ashuc2 
+   87  docker  ps
+   89  docker  ps
+   90  docker  kill  ashuc2 
+   92  docker start   ashuc2 
+   93  docker  ps
+   95  docker  kill ashuc2  
+   96  docker  rm   ashuc2  
+   98  docker  info
+   99  docker  ps
+  100  docker kill  c1afe4e80a5e
+  101  docker  ps
+  102  docker ps  -q
+  103  docker  kill  $(docker ps  -q)
+  104  docker  rm   $(docker ps  -qa)
+  106  docker  ps  -a
+  107  docker  run  --name  ashuc1  -d  alping ping 8.8.8.8
+  108  docker  run  --name  ashuc1  -d  alpine ping 8.8.8.8
+  109  docker  ps
+  110  docker  exec  ashuc1  cal 
+  111  docker  exec  ashuc1  ping fb.com 
+  112  docker  ps
+  116  docker  exec  ashuc1  uname
+  117  docker  exec  ashuc1  uname -r
+  118  docker  exec ashuc1  sh 
+  119  docker  exec -it   ashuc1  sh 
+  121  docker  images
+  122  docker  run -it  --name  ashuc2 centos   bash 
+  124  docker ps
+  125  docker  start  ashuc2
+  126  docker  ps
+  127  docker  exec  -d  ashuc2  ping fb.com 
+  128  docker  ps
+  129  docker  exec -it  ashuc2  bash 
+  130  docker  exec -it  ps  -e
+  131  docker  exec -it ashuc2  ps  -e
+  132  docker  exec -it ashuc2  top
+  133  docker top  ashuc2
+  135  docker top  ashuc2
+  136  docker  ps
+  137  docker kill $(docker  ps  -q)
+  138  docker  ps  -a
+  139  docker rm  $(docker  ps  -qa)
+  142  docker  ps  -a
+  143  docker run  -d  --name  ashuc1  alpine ping fb.com 
+  144  docker  ps
+  145  docker run  -d  --name  ashuc2  alpine  hiimycommand 
+  146  docker  ps
+  147  docker  ps -a
+  148  docker  images
+  149  docker  run  -dit  --name  ok1  alpine  
+  150  docker  ps
+  151  docker  images
+  152  docker  inspect  python
+  153  docker  run  -it  --name ashuc3  python    
+  154  docker  inspect  python
+  155  docker  inspect  centos
+  156  docker  run  -it  --name ashuc4  centos   
+  157  docker  ps  -a
+  167  vim Dockerfile
+  168  cat  Dockerfile 
+  169  docker  images
+  171  docker  build  -t  ashualpine:v1  .
+  172  docker  images
+  173  docker  inspect  ashualpine:v1  
+  175  docker  run  --rm  --name ashuxc1   ashualpine:v1  
+  176  docker  run  --rm  --name ashuxc1   ashualpine:v1  cal 
+  177  docker  run  --rm  --name ashuxc1   ashualpine:v1  top
+  180  vim  Dockerfile 
+  181  cat  Dockerfile 
+  183  docker  build  -t  ashualpine:v2  .
+  184  docker  run --rm --name  ashuxx1   ashualpine:v2  
+  185  docker  run --rm --name  ashuxx1   ashualpine:v2    cal 
+  186  cat  Dockerfile 
+  188  docker  images
+  201  cat  img1/Dockerfile 
+  206  vim  Dockerfile
+  207  cat  Dockerfile 
+  210  cat  Dockerfile 
+  212  docker build  -t  ashupy:v1  .
+  213  docker  images
+  214  docker  images   |   grep -i ashu
+  215  docker  images
+  216  docker run --rm  --name ok111   ashupy:v1  
+  217  docker  ps
+  218  docker run -it  --rm  --name ok2   ashupy:v1  
+  219  docker  ps
+  220  docker rm  $(docker ps -aq)  --force
+  222  docker  images
+  242  vim   ashunginx.dockerfile
+  246  vim ashunginx.dockerfile 
+  247  cat  ashunginx.dockerfile 
+  248  docker  build  -t  ashuweb:v1  .
+  250  docker  build  -t  ashuweb:v1   -f  ashunginx.dockerfile  .
+  251  docker  images
+  252  docker  images  |   grep -i web
+  254  docker  images  |   grep -i web
+  258  cat  ashunginx.dockerfile 
+  259  cat ashunginx.dockerfile 
+  270  docker  images   |   grep -i web
+  271  docker  run  -itd  --name ashuw1  -p  9090:80  ashuweb:v1  
+  272  docker  ps
+  274  cat  ashunginx.dockerfile 
+  277  git  clone  https://github.com/redashu/dockerk8sciscojune152020
+  279  cp -rvf day1/ dockerk8sciscojune152020/
+  285  history  |   grep -i docker  >dockerk8sciscojune152020/history.txt
