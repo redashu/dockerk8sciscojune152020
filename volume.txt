@@ -1,0 +1,101 @@
+    7  docker -v
+    8  docker  version 
+   10  docker  version
+   13  docker  version
+   16  docker  version
+   18  docker  search   java
+   30  docker   pull  java
+   43  docker   search  csr1000v
+   44  docker  pull  csr1000v/csr1000v-azure
+   48  cd /var/lib/docker/
+   67     43  docker   search  csr1000v
+   68     44  docker  pull  csr1000v/csr1000v-azure
+  167  vim Dockerfile
+  171  docker  build  -t  ashualpine:v1  .
+  173  docker  inspect  ashualpine:v1  
+  175  docker  run  --rm  --name ashuxc1   ashualpine:v1  
+  176  docker  run  --rm  --name ashuxc1   ashualpine:v1  cal 
+  177  docker  run  --rm  --name ashuxc1   ashualpine:v1  top
+  180  vim  Dockerfile 
+  183  docker  build  -t  ashualpine:v2  .
+  184  docker  run --rm --name  ashuxx1   ashualpine:v2  
+  185  docker  run --rm --name  ashuxx1   ashualpine:v2    cal 
+  196  vim  hello.py
+  206  vim  Dockerfile
+  212  docker build  -t  ashupy:v1  .
+  216  docker run --rm  --name ok111   ashupy:v1  
+  218  docker run -it  --rm  --name ok2   ashupy:v1  
+  242  vim   ashunginx.dockerfile
+  244  mv  project-html-website/  web1
+  246  vim ashunginx.dockerfile 
+  248  docker  build  -t  ashuweb:v1  .
+  250  docker  build  -t  ashuweb:v1   -f  ashunginx.dockerfile  .
+  271  docker  run  -itd  --name ashuw1  -p  9090:80  ashuweb:v1  
+  279  cp -rvf day1/ dockerk8sciscojune152020/
+  296  vim   .dockerignore  
+  299  docker  build  -t  ashuweb:v2  -f  ashunginx.dockerfile  . 
+  308  rsync  -av day1/  dockerk8sciscojune152020/
+  311  rm  -rvf  day1/webapp1/web1/.git/
+  313  rm  -rvf  webapp1/web1/.git/
+  332  mv  beginner-html-site-styled/  webapp1
+  333  mv  html-css-website-course/   webapp2
+  334  mv  project-html-website/    webapp3
+  338  vim  Dockerfile
+  339  docker build  -t  test:v1  .
+  342  vim  Dockerfile 
+  343  docker build  -t  test:v1  .
+  345  docker build --build-arg  x=telnet  -t  test:v1  .
+  349  vim Dockerfile 
+  350  docker  run --rm  test:v1 env
+  351  vim Dockerfile 
+  352  docker build   -t  test:v1  .
+  354  docker  run --rm  test:v1 env
+  357  docker build --build-arg  x=telnet  -t  test:v1  .
+  359  vim  Dockerfile 
+  360  docker build --build-arg  x=telnet  -t  test:v1  .
+  361  docker  run --rm  test:v1 env
+  368  vim  Dockerfile
+  371  vim  /usr/lib/systemd/system/httpd.service
+  372  vim  Dockerfile
+  374  vim   startweb.sh
+  381  vim Dockerfile 
+  388  vim  .dockerignore
+  416  cp  -vrf day1/multiapp/  dockerk8sciscojune152020/
+  443  cd /var/lib/docker/
+  484  docker  save  -o  ashu.tar  ashuweb:june162020
+  487  sudo cp  ashu.tar  /var/www/html/
+  488  sudo chmod  644  /var/www/html/ashu.tar 
+  590  cd /var/lib/docker/
+  621  iptables -nvL -t nat
+  622  sudo iptables -nvL -t nat
+  629  sudo  vim  /etc/sysconfig/docker  
+  633  sudo mkfs.xfs  /dev/xvdf  
+  635  sudo mount   /dev/xvdf  /mnt/docker/
+  638  sudo vim /etc/sysconfig/docker
+  678  cd  overlay2/
+  691  docker  volume   create   ashuvol1 
+  692  docker  volume ls
+  695  cd  volumes/
+  697  cd ashuvol1/
+  702  docker  volume  inspect ashuvol1 
+  703  docker  run  -it  --name  ashuc2  -v  ashuvol1:/data   alpine  sh 
+  705  ls  /mnt/docker/volumes/ashuvol1/_data
+  706  docker  run  -it  --name  ashuc2  -v  ashuvol1:/okk   centos  bash 
+  707  docker  run  -it --rm  -v  ashuvol:/fine:ro   alpine  sh 
+  708  docker  run  -it --rm  -v  ashuvol1:/fine:ro   alpine  sh 
+  711  docker  volume inspect ashuvol
+  718  mv  project-html-website/  mywebsite
+  721  docker run  -d  -p 9009:80 -v  /home/ec2-user/day2/mywebsite/:/usr/share/nginx/html  nginx 
+  727  rm  -rvf img/
+  733  docker run  -d  -p 9009:80 -v  /home/ec2-user/day2/mywebsite/:/usr/share/nginx/html  -v  ashuvol3:/var/log/nginx   nginx 
+  735  docker  volume lis
+  736  docker  volume ls
+  740  docker  run  -it --rm   -v  /etc/passwd:/okkkk.txt  alpine  sh 
+  742  ls  -l   /var/run/docker.sock 
+  744  docker  run  -d  --name  webui --restart  always  -v  /var/run/docker.sock:/var/run/docker.sock  -p 9000:9000  portainer/portainer  
+  750  docker  run -d  --name ok1  --log-driver   syslog  alpine ping fb.com 
+  751  cat  /var/log/messages 
+  752  sudo cat  /var/log/messages 
+  756  docker  run -d  --name ok1  --log-driver   syslog  --log-opt    alpine ping fb.com 
+  766  history  |   grep -i v
+  767  history  |   grep -i v >dockerk8sciscojune152020/volume.txt

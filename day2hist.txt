@@ -1,0 +1,769 @@
+    1  sudo -i
+    2  ls /home
+    3  who
+    4  who   |  wc -l
+    5  who
+    6  whoami
+    7  docker -v
+    8  docker  version 
+    9  sudo -i
+   10  docker  version
+   11  who
+   12  sudo -i
+   13  docker  version
+   14  sudo -i
+   15  whoami
+   16  docker  version
+   17  docker  search   mysql 
+   18  docker  search   java
+   19  docker  search   hadoop
+   20  docker  search   rhel
+   21  docker  search   dockerashu
+   22  docker  search   ashutoshh
+   23  history 
+   24  who
+   25  docker   images
+   26  docker   pull  centos
+   27  docker   images
+   28  docker   pull  mysql 
+   29  docker   images
+   30  docker   pull  java
+   31  docker   images
+   32  docker   pull  python 
+   33  docker   images
+   34  docker   pull  alpine
+   35  docker   images
+   36  docker   pull  busybox
+   37  docker   images
+   38  docker   search rhel
+   39  docker   pull richxsl/rhel7
+   40  docker   images
+   41  docker   search  cisco 
+   42  docker   search  ciscocsr
+   43  docker   search  csr1000v
+   44  docker  pull  csr1000v/csr1000v-azure
+   45  history 
+   46  docker  images
+   47  docker  info 
+   48  cd /var/lib/docker/
+   49  ls
+   50  sudo -i
+   51  history 
+   52  cat  /etc/os-release 
+   53  uname 
+   54  uname -r
+   55  cal 
+   56  docker  images
+   57  docker  run   alpine  cal 
+   58  docker  run   alpine  ping  fb.com 
+   59  history 
+   60  docker   ps
+   61  docker   ps  -a
+   62  docker   ps  
+   63  docker   ps  -a
+   64  docker  run --name  ashuc1     alpine  ping  fb.com 
+   65  docker  ps -a
+   66  history 
+   67     43  docker   search  csr1000v
+   68     44  docker  pull  csr1000v/csr1000v-azure
+   69     45  history 
+   70     46  docker  images
+   71  history 
+   72  docker run --name  ashuc2  -d  alpine  ping fb.com 
+   73  docker  ps
+   74  docker  logs  ashuc2  
+   75  history 
+   76  docker  logs -f  ashuc2  
+   77  history 
+   78  docker  ps
+   79  docker  ps  -a
+   80  docker  logs   heuristic_ride
+   81  docker  ps
+   82  docker  stop  ashuc2 
+   83  docker  ps
+   84  history 
+   85  docker  ps
+   86  docker  start   ashuc2 
+   87  docker  ps
+   88  history 
+   89  docker  ps
+   90  docker  kill  ashuc2 
+   91  history 
+   92  docker start   ashuc2 
+   93  docker  ps
+   94  history 
+   95  docker  kill ashuc2  
+   96  docker  rm   ashuc2  
+   97  history 
+   98  docker  info
+   99  docker  ps
+  100  docker kill  c1afe4e80a5e
+  101  docker  ps
+  102  docker ps  -q
+  103  docker  kill  $(docker ps  -q)
+  104  docker  rm   $(docker ps  -qa)
+  105  history 
+  106  docker  ps  -a
+  107  docker  run  --name  ashuc1  -d  alping ping 8.8.8.8
+  108  docker  run  --name  ashuc1  -d  alpine ping 8.8.8.8
+  109  docker  ps
+  110  docker  exec  ashuc1  cal 
+  111  docker  exec  ashuc1  ping fb.com 
+  112  docker  ps
+  113  history 
+  114  uname
+  115  uname   -r
+  116  docker  exec  ashuc1  uname
+  117  docker  exec  ashuc1  uname -r
+  118  docker  exec ashuc1  sh 
+  119  docker  exec -it   ashuc1  sh 
+  120  history 
+  121  docker  images
+  122  docker  run -it  --name  ashuc2 centos   bash 
+  123  history 
+  124  docker ps
+  125  docker  start  ashuc2
+  126  docker  ps
+  127  docker  exec  -d  ashuc2  ping fb.com 
+  128  docker  ps
+  129  docker  exec -it  ashuc2  bash 
+  130  docker  exec -it  ps  -e
+  131  docker  exec -it ashuc2  ps  -e
+  132  docker  exec -it ashuc2  top
+  133  docker top  ashuc2
+  134  history 
+  135  docker top  ashuc2
+  136  docker  ps
+  137  docker kill $(docker  ps  -q)
+  138  docker  ps  -a
+  139  docker rm  $(docker  ps  -qa)
+  140  history 
+  141  sudo -i
+  142  docker  ps  -a
+  143  docker run  -d  --name  ashuc1  alpine ping fb.com 
+  144  docker  ps
+  145  docker run  -d  --name  ashuc2  alpine  hiimycommand 
+  146  docker  ps
+  147  docker  ps -a
+  148  docker  images
+  149  docker  run  -dit  --name  ok1  alpine  
+  150  docker  ps
+  151  docker  images
+  152  docker  inspect  python
+  153  docker  run  -it  --name ashuc3  python    
+  154  docker  inspect  python
+  155  docker  inspect  centos
+  156  docker  run  -it  --name ashuc4  centos   
+  157  docker  ps  -a
+  158  whoami
+  159  pwd
+  160  ls
+  161  mkdir  day1
+  162  ls
+  163  cd  day1/
+  164  ls
+  165  mkdir  img1
+  166  cd   img1/
+  167  vim Dockerfile
+  168  cat  Dockerfile 
+  169  docker  images
+  170  ls
+  171  docker  build  -t  ashualpine:v1  .
+  172  docker  images
+  173  docker  inspect  ashualpine:v1  
+  174  history 
+  175  docker  run  --rm  --name ashuxc1   ashualpine:v1  
+  176  docker  run  --rm  --name ashuxc1   ashualpine:v1  cal 
+  177  docker  run  --rm  --name ashuxc1   ashualpine:v1  top
+  178  history 
+  179  ls
+  180  vim  Dockerfile 
+  181  cat  Dockerfile 
+  182  history 
+  183  docker  build  -t  ashualpine:v2  .
+  184  docker  run --rm --name  ashuxx1   ashualpine:v2  
+  185  docker  run --rm --name  ashuxx1   ashualpine:v2    cal 
+  186  cat  Dockerfile 
+  187  history 
+  188  docker  images
+  189  hia
+  190  cd ..
+  191  ls
+  192  mkdir pyimg
+  193  ls
+  194  cd  pyimg/
+  195  ls
+  196  vim  hello.py
+  197  cat  hello.py 
+  198  ls
+  199  cd ..
+  200  ls
+  201  cat  img1/Dockerfile 
+  202  cd pyimg/
+  203  ls
+  204  cat  hello.py 
+  205  ls
+  206  vim  Dockerfile
+  207  cat  Dockerfile 
+  208  ls
+  209  cat  hello.py 
+  210  cat  Dockerfile 
+  211  ls
+  212  docker build  -t  ashupy:v1  .
+  213  docker  images
+  214  docker  images   |   grep -i ashu
+  215  docker  images
+  216  docker run --rm  --name ok111   ashupy:v1  
+  217  docker  ps
+  218  docker run -it  --rm  --name ok2   ashupy:v1  
+  219  docker  ps
+  220  docker rm  $(docker ps -aq)  --force
+  221  history 
+  222  docker  images
+  223  ls
+  224  cd  day1/
+  225  ls
+  226  cd pyimg/
+  227  ls
+  228  cd  ..
+  229  ls
+  230  mkdir  webapp1
+  231  ls
+  232  cd  webapp1/
+  233  ls
+  234  git  clone  https://github.com/microsoft/project-html-website
+  235  sudo  yum  install  git -y
+  236  git  clone  https://github.com/microsoft/project-html-website
+  237  ls
+  238  hia
+  239  history 
+  240  ls
+  241  ls  project-html-website/
+  242  vim   ashunginx.dockerfile
+  243  ls
+  244  mv  project-html-website/  web1
+  245  ls
+  246  vim ashunginx.dockerfile 
+  247  cat  ashunginx.dockerfile 
+  248  docker  build  -t  ashuweb:v1  .
+  249  ls
+  250  docker  build  -t  ashuweb:v1   -f  ashunginx.dockerfile  .
+  251  docker  images
+  252  docker  images  |   grep -i web
+  253  history 
+  254  docker  images  |   grep -i web
+  255  ls
+  256  history 
+  257  ls
+  258  cat  ashunginx.dockerfile 
+  259  cat ashunginx.dockerfile 
+  260  ls
+  261  history 
+  262  pwd
+  263  ls
+  264  history 
+  265  pwd
+  266  ls
+  267  sudo -i
+  268  ls
+  269  history 
+  270  docker  images   |   grep -i web
+  271  docker  run  -itd  --name ashuw1  -p  9090:80  ashuweb:v1  
+  272  docker  ps
+  273  ls
+  274  cat  ashunginx.dockerfile 
+  275  cd
+  276  ls
+  277  git  clone  https://github.com/redashu/dockerk8sciscojune152020
+  278  ls
+  279  cp -rvf day1/ dockerk8sciscojune152020/
+  280  cd ..
+  281  ls
+  282  cd
+  283  ls
+  284  history  
+  285  history  |   grep -i docker  >dockerk8sciscojune152020/history.txt
+  286  ls
+  287  docker  ps
+  288  cd  day1/
+  289  ls
+  290  cd  webapp1/
+  291  ls
+  292  ls  web1/
+  293  ls  web1/  -a
+  294  cat  ashunginx.dockerfile 
+  295  ls
+  296  vim   .dockerignore  
+  297  ls
+  298  cat  .dockerignore 
+  299  docker  build  -t  ashuweb:v2  -f  ashunginx.dockerfile  . 
+  300  ls
+  301  ls  -a
+  302  cd .
+  303  ls
+  304  cd  ..
+  305  ls
+  306  cd ..
+  307  ls
+  308  rsync  -av day1/  dockerk8sciscojune152020/
+  309  cd  dockerk8sciscojune152020/
+  310  ls
+  311  rm  -rvf  day1/webapp1/web1/.git/
+  312  ls
+  313  rm  -rvf  webapp1/web1/.git/
+  314  ls
+  315  git  add .
+  316  git commit  -m  "docker file example"
+  317  git push 
+  318  ls
+  319  cd  ..
+  320  ls
+  321  cd day1/
+  322  ls
+  323  mkdir  multiapp
+  324  cd  multiapp/
+  325  ls
+  326  git clone  https://github.com/microsoft/project-html-website
+  327  ls
+  328  git clone  https://github.com/mdn/beginner-html-site-styled
+  329  ls
+  330  git clone  https://github.com/scotch-io/html-css-website-course
+  331  ls
+  332  mv  beginner-html-site-styled/  webapp1
+  333  mv  html-css-website-course/   webapp2
+  334  mv  project-html-website/    webapp3
+  335  ls
+  336  history 
+  337  ls
+  338  vim  Dockerfile
+  339  docker build  -t  test:v1  .
+  340  ls
+  341  cat  Dockerfile 
+  342  vim  Dockerfile 
+  343  docker build  -t  test:v1  .
+  344  cat  Dockerfile 
+  345  docker build --build-arg  x=telnet  -t  test:v1  .
+  346  cat  Dockerfile 
+  347  history 
+  348  cat  Dockerfile 
+  349  vim Dockerfile 
+  350  docker  run --rm  test:v1 env
+  351  vim Dockerfile 
+  352  docker build   -t  test:v1  .
+  353  cat  Dockerfile 
+  354  docker  run --rm  test:v1 env
+  355  history 
+  356  cat  Dockerfile 
+  357  docker build --build-arg  x=telnet  -t  test:v1  .
+  358  ls
+  359  vim  Dockerfile 
+  360  docker build --build-arg  x=telnet  -t  test:v1  .
+  361  docker  run --rm  test:v1 env
+  362  cat  Dockerfile 
+  363  ls
+  364  ls  webapp1/
+  365  ls  webapp1/  webapp2/
+  366  ls  webapp1/  webapp2/  webapp3
+  367  ls
+  368  vim  Dockerfile
+  369  sudo yum  install  httpd
+  370  systemctl  status  httpd
+  371  vim  /usr/lib/systemd/system/httpd.service
+  372  vim  Dockerfile
+  373  ls
+  374  vim   startweb.sh
+  375  cat  startweb.sh 
+  376  cat  Dockerfile 
+  377  cat  startweb.sh 
+  378  ls
+  379  cat  startweb.sh 
+  380  cat Dockerfile 
+  381  vim Dockerfile 
+  382  cat  Dockerfile 
+  383  cat  startweb.sh 
+  384  ls
+  385  cat  Dockerfile 
+  386  ls
+  387  ls   -a  webapp1/
+  388  vim  .dockerignore
+  389  ls   -a  webapp2
+  390  ls   -a  webapp3
+  391  cat  .dockerignore 
+  392  docker  build  -t  ashucisco:june152020  .
+  393  history 
+  394  docker  images
+  395  cat  Dockerfile 
+  396  history 
+  397  docker  images
+  398  sudo -i
+  399  docker  images
+  400  history 
+  401  docker  ps
+  402  docker  rm  $(docker ps -aq)  --force
+  403  docker  run  -itd --name ashuc1 -p 9090:80  ashucisco:june152020  
+  404  docker  ps 
+  405  docker  run  -itd --name ashuc2 -p 9091:80 -e page=web2     ashucisco:june152020  
+  406  docker  ps 
+  407  docker  run  -itd --name ashuc3 -p 9092:80 -e page=web3     ashucisco:june152020  
+  408  docker  run  -itd --name ashuc4 -p 9009:80 -e page=web3     ashucisco:june152020  
+  409  history 
+  410  docker ps
+  411  ls
+  412  cd ..
+  413  ls
+  414  cd ..
+  415  ls
+  416  cp  -vrf day1/multiapp/  dockerk8sciscojune152020/
+  417  cd  dockerk8sciscojune152020/
+  418  ls
+  419  git add .
+  420  git commit   -m  "docker multi"
+  421  docker push 
+  422  git  push 
+  423  docker  exec  -it  ashut1  sh 
+  424  exit
+  425  who
+  426  ls /home/
+  427  w
+  428  who
+  429  docker  info 
+  430  docker  search  mongo 
+  431  docker  pull  mongo 
+  432  docker ps
+  433  docker  ps -a
+  434  docker rm  $(docker ps -aq)
+  435  docker  images
+  436  docker rmi  nginx 
+  437  docker  images  -q
+  438  docker  rmi  $(docker  images  -q)  --force
+  439  docker  images
+  440  history 
+  441  ls
+  442  whoami
+  443  cd /var/lib/docker/
+  444  ls
+  445  sudo -i
+  446  ls
+  447  cd
+  448  ls
+  449  cd  day1/
+  450  ls
+  451  cd  multiapp/
+  452  ls
+  453  cat  Dockerfile 
+  454  ls
+  455  cat  startweb.sh 
+  456  ls -a
+  457  cat  .dockerignore 
+  458  ls
+  459  docker  build  -t  ciscoweb:june162020 .
+  460  history 
+  461  docker  images
+  462  docker images
+  463  sudo -i
+  464  docker  images
+  465  docker run -itd --name ashuc1 -e page=web1 -p  1122:80  ciscoweb:june162020 
+  466  docker run -itd --name ashuc2 -e page=web2 -p  1133:80  ciscoweb:june162020 
+  467  docker run -itd --name ashuc3 -e page=web3 -p  1144:80  ciscoweb:june162020 
+  468  docker  ps
+  469  cat  startweb.sh 
+  470  history 
+  471  ls
+  472  docker  build  -t  ashuweb:june162020 .
+  473  docker run -itd --name ashuc222 -e page=web2 -p  3311:80  ashuweb:june162020 
+  474  history 
+  475  docker run -itd --name ashuc22442 -e page=web3 -p  9088:80  ashuweb:june162020 
+  476  history 
+  477  docker  ps
+  478  sudo -i
+  479  ls
+  480  docker ps  |   grep -i pra
+  481  sudo -i
+  482  cat  Dockerfile 
+  483  docker  images
+  484  docker  save  -o  ashu.tar  ashuweb:june162020
+  485  ls
+  486  ls  -lh ashu.tar 
+  487  sudo cp  ashu.tar  /var/www/html/
+  488  sudo chmod  644  /var/www/html/ashu.tar 
+  489  sudo systemctl start  httpd
+  490  cd
+  491  ls
+  492  docker  images
+  493  docker  tag  ashuweb:june162020      dockerashu/ashuweb:june162020
+  494  docker  images
+  495  history 
+  496  docker  images
+  497  history 
+  498  docker login  
+  499  docker  push    dockerashu/ashuweb:june162020
+  500  docker logout 
+  501  history 
+  502  docker  images
+  503  docker  run -it  --rm  56ebd27f52d2   bash 
+  504  docker  run -it  --rm --entrypoint /bin/bash     56ebd27f52d2   
+  505  history 
+  506  docker ps 
+  507  docker ps   |   grep -i ashu
+  508  docker  stats  ashuc1  
+  509  docker  stats  
+  510  docker run  -d --name  ashut1  alpine ping fb.com 
+  511  docker  stats  ashut1 
+  512  docker  run  -d --name ashumem  --memory 50m  alpine ping fb.com 
+  513  docker  stats  ashumem 
+  514  history 
+  515  docker  run  -d --name ashumem1  --memory 50m --cpus 1  alpine ping fb.com 
+  516  history 
+  517  sudo curl https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker -o /etc/bash_completion.d/docker.sh
+  518  docker  update  ashumem1  --memory 100m 
+  519  docker  stats  ashumem1
+  520  history 
+  521  docker  inspect  ashumem 
+  522  docker  run -d   --restart  always --name oknew   nginx
+  523  docker  inspect  oknew 
+  524  history 
+  525  reboot 
+  526  sudo reboot 
+  527  docker  ps
+  528  docker  ps -a
+  529  history 
+  530  docker  rm  $(docker ps -aq)  --force
+  531  ifconfig  
+  532  docker  run -d --name ashuc1  alpine ping fb.com 
+  533  ifconfig 
+  534  history 
+  535  docker  inspect  ashuc1 
+  536  docker  exec  -it  ashuc1 ping fb.com 
+  537  docker  exec  -it  ashuc1 traceroute fb.com 
+  538  history 
+  539  sudo -i
+  540  docker run  -d  --name  ashuc2  alpine ping fb.com 
+  541  docker  ps
+  542  docker  network   ls 
+  543  docker  network  inspect  bridge 
+  544  history 
+  545  docker  network  inspect  bridge   |   grep -i ipa
+  546  docker  network  inspect  bridge   |   grep -i ip
+  547  history 
+  548  docker  network   ls
+  549  docker  run  --rm  -it  --network none  alpine  sh 
+  550  history 
+  551  docker  network   ls
+  552  ifconfig 
+  553  docker  run -it  --rm  --network  host  alpine  sh 
+  554  history 
+  555  docker  rm  $(docker  ps -aq)  --force
+  556  ifconfig 
+  557  docker  run -it --rm alpine 
+  558  docker  run -it --rm --network  host  alpine 
+  559  history 
+  560  cd  /proc/
+  561  ls
+  562  cd  1904
+  563  ls
+  564  cd
+  565  history 
+  566  docker run -d  --name  c1   alpine ping fb.com 
+  567  docker run -d  --name  c2   alpine ping fb.com 
+  568  docker exec  -it c1  sh 
+  569  docker exec  -it c2  sh 
+  570  docker  network   ls
+  571  docker  network   create   ashubr1
+  572  docker  network   ls
+  573  docker  network  inspect   ashubr1 
+  574  history 
+  575  docker  rm  $(docker  ps -aq)  --force
+  576  docker  run -d  --name ashuc1  --network ashubr1 alping ping fb.com 
+  577  docker  run -d  --name ashuc1  --network ashubr1 alpine ping fb.com 
+  578  docker  run -d  --name ashuc2  --network ashubr1 alpine ping fb.com 
+  579  history 
+  580  docker  network  inspect   ashubr1 
+  581  history 
+  582  docker  exec  ashuc1  ping 172.18.0.3
+  583  docker  exec  ashuc1  ping 8
+  584  docker  exec  ashuc1  ping 172.19.0.2
+  585  docker  exec  ashuc1  ping 172.19.0.1
+  586  docker  network  inspect   ashubr1 
+  587  history 
+  588  docker  exec  ashuc1  ping ashuc2
+  589  docker  exec  ashuc1  cat  /etc/hosts
+  590  cd /var/lib/docker/
+  591  ls
+  592  sudo -i
+  593  history 
+  594  docker  run  -d  --name ashuc3  --network ashubr1  --ip  172.18.0.100 alpine ping fb.com 
+  595  history 
+  596  docker  network  create  ashubr2  --subnet 192.168.0.0/24  
+  597  docker  network  inspect ashubr2 
+  598  docker  run -d --name ashuc4  --network ashubr2  --ip  192.168.0.100  alping ping fb.com 
+  599  docker  run -d --name ashuc4  --network ashubr2  --ip  192.168.0.100  alpine ping fb.com 
+  600  docker  inspect  ashuc4 
+  601  history 
+  602  history   |   grep -i net
+  603  history 
+  604  docker network  ls
+  605  docker  exec -it ashuc1  sh 
+  606  docker  network  connect abhikbr1  ashuc1 
+  607  docker  exec -it ashuc1  sh 
+  608  history 
+  609  docker  network  disconnect abhikbr1  ashuc1 
+  610  history 
+  611  brctl show
+  612  ip
+  613  docker  network  ls
+  614  history 
+  615  sudo -i
+  616  history 
+  617  docker  run  -d  --name  test1  -p  172.3177.117:8811:80  nginx 
+  618  docker  run  -d  --name  test1  -p  172.31.77.117:8811:80  nginx 
+  619  ifconfig 
+  620  history 
+  621  iptables -nvL -t nat
+  622  sudo iptables -nvL -t nat
+  623  history 
+  624  netstat -nlpt
+  625  sudo netstat -nlpt
+  626  docker  network  ls
+  627  cd  /etc/sysconfig/
+  628  ls
+  629  sudo  vim  /etc/sysconfig/docker  
+  630  sudo systemctl daemon-reload 
+  631  sudo systemctl restart docker 
+  632  lsblk 
+  633  sudo mkfs.xfs  /dev/xvdf  
+  634  sudo mkdir  /mnt/docker 
+  635  sudo mount   /dev/xvdf  /mnt/docker/
+  636  history 
+  637  ls
+  638  sudo vim /etc/sysconfig/docker
+  639  docker  images
+  640  docker network ls 
+  641  docker  ps -a
+  642  sudo systemctl daemon-reload 
+  643  sudo systemctl restart  docker 
+  644  docker  info 
+  645  docker  images
+  646  docker  network  ls
+  647  docker ps  -a
+  648  history 
+  649  docker pull  centos 
+  650  history 
+  651  cat  /etc/sysconfig/docker
+  652  cd
+  653  docker  images
+  654  cd  /mnt/docker/
+  655  ls
+  656  sudo ls
+  657  sudo -i
+  658  cd
+  659  docker  run -it --name ashuc1  alpine  sh 
+  660  sudo -i
+  661  docker  ps
+  662  docker  ps -a
+  663  cd  /mnt/docker/
+  664  ls
+  665  cd  containers/
+  666  ls
+  667  cd  3dee1118b966a56054e02db118ce8a89ebc7059931bece6e9156fc4828341aeb/
+  668  ls
+  669  cd  checkpoints/
+  670  ls
+  671  cd  ..
+  672  ls
+  673  cd  mounts/
+  674  ls
+  675  cd  ..
+  676  cd  /mnt/docker/
+  677  ls
+  678  cd  overlay2/
+  679  ls
+  680  find  /mnt/docker  -type d -iname  helloashu
+  681  cd  c615125850446568a0b2acdf7a36a0cdfe46e6a61bff988c14a4d55ed2fafa9a
+  682  ls
+  683  cd  diff/
+  684  ls
+  685  mkdir  hello cisco 
+  686  cd
+  687  history 
+  688  docker  rmi  ashuc1
+  689  docker  rm  ashuc1
+  690  cd
+  691  docker  volume   create   ashuvol1 
+  692  docker  volume ls
+  693  cd   /mnt/docker/
+  694  ls
+  695  cd  volumes/
+  696  ls
+  697  cd ashuvol1/
+  698  ls
+  699  cd  _data/
+  700  ls
+  701  cd
+  702  docker  volume  inspect ashuvol1 
+  703  docker  run  -it  --name  ashuc2  -v  ashuvol1:/data   alpine  sh 
+  704  docker  rm  ashuc2
+  705  ls  /mnt/docker/volumes/ashuvol1/_data
+  706  docker  run  -it  --name  ashuc2  -v  ashuvol1:/okk   centos  bash 
+  707  docker  run  -it --rm  -v  ashuvol:/fine:ro   alpine  sh 
+  708  docker  run  -it --rm  -v  ashuvol1:/fine:ro   alpine  sh 
+  709  history 
+  710  ls
+  711  docker  volume inspect ashuvol
+  712  ls
+  713  mkdir  day2
+  714  cd  day2
+  715  ls
+  716  git clone https://github.com/microsoft/project-html-website
+  717  ls
+  718  mv  project-html-website/  mywebsite
+  719  ls
+  720  pwd
+  721  docker run  -d  -p 9009:80 -v  /home/ec2-user/day2/mywebsite/:/usr/share/nginx/html  nginx 
+  722  history 
+  723  docker  ps
+  724  ls
+  725  cd  mywebsite/
+  726  ls
+  727  rm  -rvf img/
+  728  history 
+  729  docker  rm  $(docker ps -aq) --force
+  730  ls
+  731  cd ..
+  732  ls
+  733  docker run  -d  -p 9009:80 -v  /home/ec2-user/day2/mywebsite/:/usr/share/nginx/html  -v  ashuvol3:/var/log/nginx   nginx 
+  734  history 
+  735  docker  volume lis
+  736  docker  volume ls
+  737  history 
+  738  ls
+  739  cat  /etc/passwd
+  740  docker  run  -it --rm   -v  /etc/passwd:/okkkk.txt  alpine  sh 
+  741  history 
+  742  ls  -l   /var/run/docker.sock 
+  743  docker  pull  portainer/portainer 
+  744  docker  run  -d  --name  webui --restart  always  -v  /var/run/docker.sock:/var/run/docker.sock  -p 9000:9000  portainer/portainer  
+  745  docker  ps
+  746  history 
+  747  docker logs  webui 
+  748  history 
+  749  docker  info
+  750  docker  run -d  --name ok1  --log-driver   syslog  alpine ping fb.com 
+  751  cat  /var/log/messages 
+  752  sudo cat  /var/log/messages 
+  753  sudo -i
+  754  history 
+  755  cat  /etc/sysconfig/docker
+  756  docker  run -d  --name ok1  --log-driver   syslog  --log-opt    alpine ping fb.com 
+  757  history 
+  758  netstat -nt
+  759  netstat -ntpt
+  760  netstat -ntptl
+  761  history 
+  762  cd
+  763  ls
+  764  history  |   grep -i net
+  765  history  |   grep -i net   >dockerk8sciscojune152020/network.txt
+  766  history  |   grep -i v
+  767  history  |   grep -i v >dockerk8sciscojune152020/volume.txt
+  768  ls
+  769  history   >dockerk8sciscojune152020/day2hist.txt

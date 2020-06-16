@@ -1,0 +1,41 @@
+  345  docker build --build-arg  x=telnet  -t  test:v1  .
+  357  docker build --build-arg  x=telnet  -t  test:v1  .
+  360  docker build --build-arg  x=telnet  -t  test:v1  .
+  542  docker  network   ls 
+  543  docker  network  inspect  bridge 
+  545  docker  network  inspect  bridge   |   grep -i ipa
+  546  docker  network  inspect  bridge   |   grep -i ip
+  548  docker  network   ls
+  549  docker  run  --rm  -it  --network none  alpine  sh 
+  551  docker  network   ls
+  553  docker  run -it  --rm  --network  host  alpine  sh 
+  558  docker  run -it --rm --network  host  alpine 
+  570  docker  network   ls
+  571  docker  network   create   ashubr1
+  572  docker  network   ls
+  573  docker  network  inspect   ashubr1 
+  576  docker  run -d  --name ashuc1  --network ashubr1 alping ping fb.com 
+  577  docker  run -d  --name ashuc1  --network ashubr1 alpine ping fb.com 
+  578  docker  run -d  --name ashuc2  --network ashubr1 alpine ping fb.com 
+  580  docker  network  inspect   ashubr1 
+  586  docker  network  inspect   ashubr1 
+  594  docker  run  -d  --name ashuc3  --network ashubr1  --ip  172.18.0.100 alpine ping fb.com 
+  596  docker  network  create  ashubr2  --subnet 192.168.0.0/24  
+  597  docker  network  inspect ashubr2 
+  598  docker  run -d --name ashuc4  --network ashubr2  --ip  192.168.0.100  alping ping fb.com 
+  599  docker  run -d --name ashuc4  --network ashubr2  --ip  192.168.0.100  alpine ping fb.com 
+  602  history   |   grep -i net
+  604  docker network  ls
+  606  docker  network  connect abhikbr1  ashuc1 
+  609  docker  network  disconnect abhikbr1  ashuc1 
+  613  docker  network  ls
+  624  netstat -nlpt
+  625  sudo netstat -nlpt
+  626  docker  network  ls
+  640  docker network ls 
+  646  docker  network  ls
+  758  netstat -nt
+  759  netstat -ntpt
+  760  netstat -ntptl
+  764  history  |   grep -i net
+  765  history  |   grep -i net   >dockerk8sciscojune152020/network.txt
