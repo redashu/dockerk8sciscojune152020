@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: ashuss11
+  name: ashuss11
+spec:
+  ports:
+  - name: "1234"
+    port: 1234
+    protocol: TCP
+    targetPort: 80
+  selector:
+    x: ashuapp1
+  type: NodePort
+status:
+  loadBalancer: {}

@@ -1,0 +1,12 @@
+apiVersion: v1  #  apiversion for pod  is v1
+kind: Pod    #  want to design pod
+metadata:
+ name: ashupod1   #  name of my pod and it must be unique 
+ labels:    #  just putting a stam or label in pod 
+  x: ashuapp1     #  label always will be in key : value pair
+spec:
+ containers:   # is a keyword to explain about  application 
+ - image: nginx  # docker image from  docker hub 
+   name: ashuc1  #  name of container 
+   ports:
+   - containerPort: 80  #  this port number is same as Dockerfile  expose 80 

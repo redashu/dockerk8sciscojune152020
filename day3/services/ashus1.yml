@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+ name: ashus1  # name of service
+spec:
+ type: NodePort  #   type of service 
+ selector:   #  selector is for search labels of the pod 
+  x: ashuapp1   #  same label as pod 
+ ports:
+ - name: myport
+   port: 8980  #  this will be port number of service ip 
+   protocol: TCP
+   targetPort: 80   #  this is the port number of pod 

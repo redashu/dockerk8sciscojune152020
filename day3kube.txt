@@ -1,0 +1,100 @@
+  776  kubectl  
+  777  curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+  779  sudo mv  kubectl  /usr/bin/
+  780  sudo chmod +x  /usr/bin/kubectl 
+  786  kubectl  -v
+  787  kubectl  version 
+  788  kubectl  version  --client 
+  789  kubectl  version  
+  793  kubectl  version  
+  794  kubectl  version    --client 
+  796  kubectl  client 
+  797  kubectl  version 
+  802  kubectl   get  nodes
+  803  kubectl   get  nodes  --kubeconfig  admin.conf  
+  805  kubectl  get  nodes  --kubeconfig  admin.conf 
+  808  kubectl get  nodes
+  812  kubectl   get  nodes
+  813  kubectl  cluster-info
+  818  kubectl  cluster-info 
+  832  kubectl   get  pods
+  833  kubectl   apply  -f  ashupod1.yml 
+  834  kubectl get  pods
+  838  kubectl get  nodes
+  839  kubectl get pods
+  840  kubectl get pods -o  wide
+  841  kubectl get pods
+  842  kubectl get pods  ashupod1  -o wide
+  844  kubectl get pods
+  845  kubectl describe pods  ashupod1 
+  847  kubectl describe pods  ashupod1 
+  849  kubectl describe pods  ashupod1 
+  851  kubectl describe pods  ashupod1 
+  858  kubectl  explain  pods
+  859  kubectl  explain  pods.apiVersion
+  860  kubectl  explain  pods.spec 
+  861  kubectl  explain  pods.spec.containers
+  863  kubectl  run  ashupod2  --image=nginx  --restart Never  --dry-run  -o yaml 
+  864  kubectl  run  ashupod2  --image=nginx  --restart Never  --dry-run  -o yaml  >ashpod2.yml
+  867  kubectl  run  poddd1  --image  nginx --restart  Never --dry-run 
+  868  kubectl version
+  869  kubectl  run  poddd1  --image  nginx  --dry-run 
+  872  kubectl apply  -f  ashpod2.yml 
+  873  kubectl get pods
+  876  kubectl run podx  --image=nginx   --restart  Never 
+  877  kubectl get pod
+  879  kubectl run podx  --image=nginx   --restart  Never --dry-run  -o json 
+  880  kubectl run podx  --image=nginx   --restart  Never --dry-run  -o json  >h.json 
+  882  kubectl create -f ashupod1.yml 
+  883  kubectl apply  -f ashupod1.yml 
+  885  kubectl get pods
+  886  kubectl delete pods  ashupod1 
+  887  kubectl describe pods  prapod2 
+  889  kubectl get po
+  890  kubectl describe pods  adipod2 
+  891  kubectl get po
+  892  kubectl delete pods --all
+  893  kubectl get pods
+  896  kubectl   run  ashupod1  --image=nginx  --restart Never --port 80 --dry-run -o yaml
+  899  kubectl apply  -f  ashupod1.yml 
+  900  kubectl get pods
+  903  kubectl get pods
+  904  kubectl get pods  -w
+  905  kubectl get pods  
+  906  kubectl get  nodes
+  907  kubectl get pods  -o iwde
+  908  kubectl get pods  -o wide
+  911  kubectl apply  -f ashpod2.yml 
+  912  kubectl get po ashupod2 -o wide
+  917  kubectl get pods
+  918  kubectl get pods -o wide
+  919  kubectl delete pods --all
+  924  kubectl apply  -f  ashupod1.yml 
+  925  kubectl get pods
+  926  kubectl get pods  --show-labels 
+  934  kubectl get pods  ashupod1  --show-labels 
+  938  kubectl apply -f ashus1.yml 
+  940  kubectl get  service 
+  942  kubectl apply -f ashus1.yml 
+  943  kubectl get  service 
+  945  kubectl get  service 
+  947  kubectl get  service 
+  949  kubectl get  service 
+  950  kubectl describe service  ashus1 
+  951  kubectl get svc
+  952  kubectl get  nodes
+  958  kubectl apply  -f ashus1.yml 
+  959  kubectl get  service
+  960  kubectl get  po
+  961  kubectl   exec  -ti  ashupod1  bash 
+  964  kubectl delete service --all
+  966  kubectl  get po --show-labels 
+  967  kubectl  create  service  nodeport  ashuss11 --tcp 1234 --dry-run -o yaml 
+  968  kubectl  create  service  nodeport  ashuss11 --tcp 1234 --dry-run -o yaml  >ashss1.yml
+  970  kubectl  create  service  nodeport  ashuss11 --tcp=1234 80 --dry-run -o yaml 
+  971  kubectl  create  service  nodeport  ashuss11 --tcp=1234 --target-port 80  --dry-run -o yaml 
+  974  kubectl  get po --show-labels 
+  977  kubectl  create  service  nodeport  ashuss11 --tcp=1234:80  --dry-run -o yaml 
+  978  kubectl  create  service  nodeport  ashuss11 --tcp=1234:80   --dry-run -o yaml 
+  983  history |  grep -i kubect
+  984  history |  grep -i kubect >dockerk8sciscojune152020/day3kube.txt
