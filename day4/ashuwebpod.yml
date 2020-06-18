@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: ashupodw1
+  name: ashupodw1
+  namespace: ashu
+spec:
+  containers:
+  - image: dockerashu/ashuweb:june162020
+    name: ashupodw1
+    ports:
+    - containerPort: 80
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:   #  label of service is optional 
+    app: ashusvc1
+  name: ashusvc1
+  namespace: ashu  # name of namespace
+spec:
+  ports:
+  - name: 8888-80
+    port: 8888
+    protocol: TCP
+    targetPort: 80
+  selector:
+    run: ashupodw1   #  label must match from pod 
+  type: NodePort  #  type of my service is nodeport to access it from outside k8s cluster 

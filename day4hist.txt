@@ -1,0 +1,300 @@
+ 1018  cat ashuwebpod.yml 
+ 1019  la
+ 1020  ls
+ 1021  kubectl  run podx  --image=nginx  --port  80  --dry-run -o yaml 
+ 1022  kubectl  run podx  --image=nginx  --port  80  --dry-run -o yaml  >test.yml 
+ 1023  kubectl  create  service nodeport  ashuss1 --tcp 7789:80  --dry-run -o yaml >>test.yml 
+ 1024  vim  test.yml 
+ 1025  history 
+ 1026  vim  test.yml 
+ 1027  kubectl get svc  -n ashu 
+ 1028  kubectl get po  -n ashu 
+ 1029  kubectl get po,svc  -n ashu 
+ 1030  kubectl get  ns
+ 1031  sudo -i
+ 1032  kubectl get  po,svc  -n kkns 
+ 1033  kubectl get  po,svc  -n kkns  --show-labels 
+ 1034  kubectl get svc kkss1 -o yaml   -n kkns 
+ 1035  kubectl  get  po,svc  -n ruchins  --show-labels 
+ 1036  kubectl  get  svc   -n ruchins -o yaml 
+ 1037  kubectl get svc -n ruchins 
+ 1038  history 
+ 1039  kubectl get po,svc -n ashu  -o wide
+ 1040  kubectl get po -n ashu  -o wide
+ 1041  cat  ashuwebpod.yml 
+ 1042  kubectl get  all -n ashu 
+ 1043  kubectl delete all  --all  -n ashu 
+ 1044  ls
+ 1045  vim   ashurc.yml 
+ 1046  cat  ashuwebpod.yml 
+ 1047  vim ashurc.yml 
+ 1048  vim -d  ashurc.yml  ashuwebpod.yml 
+ 1049  vim ashuwebpod.yml 
+ 1050  vim ashurc.yml 
+ 1051  cat  ashurc.yml 
+ 1052  cat  ashuwebpod.yml 
+ 1053  cat  ashurc.yml 
+ 1054  kubectl apply  -f  ashurc.yml 
+ 1055  mkdir   /tmp/rc
+ 1056  cp  -v ashurc.yml   /tmp/rc/
+ 1057  kubectl get  replicationcontrollers  -n ashu 
+ 1058  kubectl get  po -n ashu 
+ 1059  kubectl get  po -n ashu -o wide
+ 1060  history 
+ 1061  kubectl get  replicationcontrollers  -n ashu 
+ 1062  kubectl get  rc   -n ashu 
+ 1063  history 
+ 1064  cat  ashurc.yml 
+ 1065  ls
+ 1066  kubectl  get  rc  -n ashu 
+ 1067  kubectl  expose  replicationcontroller   ashurc1  --type NodePort --port 80 -n ashu 
+ 1068  kubectl get svc  -n ashu 
+ 1069  kubectl get po -n ashu  --show-labels 
+ 1070  kubectl get  svc    ashurc1  -o yaml  -n ashu 
+ 1071  history 
+ 1072  kubectl get svc  -n ashu 
+ 1073  cat  ashurc.yml 
+ 1074  sudo -i
+ 1075  cat  ashurc.yml 
+ 1076  sudo -i
+ 1077  history 
+ 1078  ls
+ 1079  vim ashurc.yml 
+ 1080  kubectl apply  -f  ashurc.yml 
+ 1081  kubectl get  rc  -n ashu 
+ 1082  kubectl  get  po -n ashu 
+ 1083  kubectl  get  po -n ashu  -o wide
+ 1084  kubectl  get  po -n ashu  --show-labels 
+ 1085  history 
+ 1086  kubectl  get  po -n ashu  --show-labels 
+ 1087  cat  ashurc.yml 
+ 1088  kubectl  get  po -n ashu  --show-labels 
+ 1089  kubectl delete po  ashurc1-qvtxj  -n ashu 
+ 1090  kubectl  get  po -n ashu  --show-labels 
+ 1091  kubectl  get  rc  -n ashu 
+ 1092  kubectl scale replicationcontroller  ashurc1  --replicas=5   -n ashu 
+ 1093  kubectl get  rc  -n ashu 
+ 1094  kubectl get  po  -n ashu 
+ 1095  kubectl scale replicationcontroller  ashurc1  --replicas=2   -n ashu 
+ 1096  kubectl get  po  -n ashu 
+ 1097  history 
+ 1098  kubectl scale replicationcontroller  ashurc1  --replicas=20   -n ashu 
+ 1099  kubectl get  po  -n ashu 
+ 1100  kubectl scale replicationcontroller  ashurc1  --replicas=2  -n ashu 
+ 1101  kubectl get  po  -n ashu 
+ 1102  hs
+ 1103  history 
+ 1104  kubectl get  po  -n ashu 
+ 1105  kubectl get  rc  -n ashu 
+ 1106  kubectl  edit  rc   ashurc1  -n ashu 
+ 1107  kubectl get  rc  -n ashu 
+ 1108  history 
+ 1109  ls
+ 1110  cat  ashuwebpod.yml 
+ 1111  kubectl  create   deployment  ashudep1  --image=dockerashu/ashuweb:june162020  --dry-run -o     yaml  
+ 1112  kubectl  create   deployment  ashudep1  --image=dockerashu/ashuweb:june162020  --dry-run -o     yaml  >ashudep1.yml 
+ 1113  history 
+ 1114  ls
+ 1115  history 
+ 1116  vim  ashudep1.yml 
+ 1117  cat ashudep1.yml 
+ 1118  kubectl apply  -f  ashudep1.yml  -n  ashu 
+ 1119  kubectl get  deployment  -n ashu 
+ 1120  kubectl get  deployments.apps  -n ashu 
+ 1121  kubectl get  deployments  -n ashu 
+ 1122  kubectl get  deploy  -n ashu 
+ 1123  history 
+ 1124  kubectl get  rs  -n ashu 
+ 1125  kubectl get po -n ashu 
+ 1126  kubectl  get  deploy -n ashu 
+ 1127  kubectl  get  rs  -n ashu 
+ 1128  kubectl  get  po   -n ashu 
+ 1129  history 
+ 1130  kubectl expose deployment  ashudep1  --type NodePort  --port 80  -n ashu 
+ 1131  kubectl get  svc -n ashu 
+ 1132  kubectl  delete  all --all -n ashu 
+ 1133  kubectl  get po,svc,deploy,rs  -n ashu 
+ 1134  ls
+ 1135  cat ashudep1.yml 
+ 1136  ls
+ 1137  kubectl apply  -f  ashudep1.yml   -n ashu 
+ 1138  kubectl get deploy -n ashu 
+ 1139  kubectl get rs   -n ashu 
+ 1140  kubectl get pod  -n ashu 
+ 1141  kubectl expose deployment  ashudep1  --type NodePort  --port 1123  --target-port 80 -n ashu 
+ 1142  kubectl get  svc -n ashu 
+ 1143  kubectl get  svc  ashudep1 -o yaml   -n ashu 
+ 1144  history 
+ 1145  kubectl get  svc -n ashu 
+ 1146  ls
+ 1147  vim ashudep1.yml 
+ 1148  kubectl apply  -f ashudep1.yml  -n ashu 
+ 1149  kubectl get  po -n ashu 
+ 1150  kubectl scale  deployment  ashudep1  --replicas=5  -n ashu 
+ 1151  kubectl get  po -n ashu 
+ 1152  history 
+ 1153  ls
+ 1154  cd  ..
+ 1155  ls
+ 1156  cd day2
+ 1157  ls
+ 1158  cd  mywebsite/
+ 1159  ls
+ 1160  cd ..
+ 1161  ls
+ 1162  cd ..
+ 1163  ls
+ 1164  cd  day1
+ 1165  ls
+ 1166  cd  multiapp/
+ 1167  ls
+ 1168  rm  ashu.tar 
+ 1169  ls
+ 1170  cd  webapp1/
+ 1171  ls
+ 1172  vim  index.html 
+ 1173  ls
+ 1174  cd ..
+ 1175  ls
+ 1176  history 
+ 1177  kubectl get  deployments.apps  -n ashu 
+ 1178  kubectl describe deployments.apps  ashudep1  -n ashu 
+ 1179  ls
+ 1180  docker  build  -t  dockerashu/ashuweb:june182020  .
+ 1181  ls
+ 1182  history 
+ 1183  docker  login  
+ 1184  docker  push  dockerashu/ashuweb:june182020  
+ 1185  docker  logout 
+ 1186  history 
+ 1187  kubectl describe deployments.apps  ashudep1  -n ashu
+ 1188  history 
+ 1189  ls
+ 1190  cd
+ 1191  s
+ 1192  ls
+ 1193  cd  day4
+ 1194  ls
+ 1195  vim ashudep1.yml 
+ 1196  kubectl apply  -f ashudep1.yml  -n ashu 
+ 1197  kubectl get po -n ashu -w
+ 1198  kubectl get po -n ashu 
+ 1199  history 
+ 1200  kubectl describe deployments.apps  ashudep1  -n ashu
+ 1201  kubectl  rollout  history  deployment ashudep1  -n ashu 
+ 1202  kubectl  rollout  history  deployment ashudep1  --revision 1   -n ashu 
+ 1203  kubectl  rollout  history  deployment ashudep1  --revision 2   -n ashu 
+ 1204  history 
+ 1205  kubectl  rollout  history  deployment ashudep1  -n ashu 
+ 1206  kubectl describe deployments.apps  ashudep1  -n ashu
+ 1207  kubectl  rollout  history  deployment ashudep1  -n ashu 
+ 1208  kubectl rollout undo deployment ashudep1 -n ashu 
+ 1209  kubectl get  po -n ashu 
+ 1210  kubectl  rollout  history  deployment ashudep1  -n ashu 
+ 1211  kubectl describe deployments.apps  ashudep1  -n ashu
+ 1212  history 
+ 1213  kubectl  rollout  history  deployment ashudep1  -n ashu 
+ 1214  kubectl rollout undo deployment ashudep1  --to-revision  2     -n ashu   
+ 1215  history 
+ 1216  kubectl  rollout  history  deployment ashudep1  -n ashu 
+ 1217  ls
+ 1218  history 
+ 1219  kubectl edit deployments.apps ashudep1 -n ashu 
+ 1220  history 
+ 1221  kubectl describe deployments.apps ashudep1 -n ashu 
+ 1222  history 
+ 1223  docker  images
+ 1224  cd
+ 1225  ls
+ 1226  cd day2
+ 1227  ls
+ 1228  cd ..
+ 1229  ls
+ 1230  cd  day1/
+ 1231  ls
+ 1232  cd  multiapp/
+ 1233  ls
+ 1234  cat  Dockerfile 
+ 1235  cat  startweb.sh 
+ 1236  kubectl  get po -n ashu 
+ 1237  kubectl exec -it  ashudep1-6f9bdc775c-mgz55  bash -n ashu 
+ 1238  history 
+ 1239  cd
+ 1240  kubectl get po -n ashu 
+ 1241  kubectl describe deployments.apps ashudep1 -n ashu 
+ 1242  ls
+ 1243  cd  day4
+ 1244  ls
+ 1245  kubectl  run  ashuenvpod  --image=dockerashu/ashuweb:june182020 --port 80 --dry-run -o yaml     >ashuenvpod.yml 
+ 1246  history 
+ 1247  ls
+ 1248  vim ashuenvpod.yml 
+ 1249  cat  ashuenvpod.yml 
+ 1250  kubectl apply  -f  ashuenvpod.yml  
+ 1251  kubectl get  po -n ashu 
+ 1252  kubectl exec  -it  ashuenvpod  env  -n ashu 
+ 1253  kubectl get  po 
+ 1254  ls
+ 1255  cat  ashuenvpod.yml 
+ 1256  history 
+ 1257  kubectl get  po -n ashu 
+ 1258  cat  ashuenvpod.yml 
+ 1259  kubectl  get po  -n ashu 
+ 1260  kubectl expose  pod  ashuenvpod  --type  LoadBalancer  --port 80  -n ashu 
+ 1261  kubectl get  svc  -n ashu 
+ 1262  history 
+ 1263  ls
+ 1264  vim ashudep1.yml 
+ 1265  history 
+ 1266  kubectl get  svc  -n ashu 
+ 1267  host  ciscolb-957978566.us-east-1.elb.amazonaws.com
+ 1268  ls
+ 1269  cat  ashuenvpod.yml 
+ 1270  kubectl delete all --all -n ashu 
+ 1271  ls
+ 1272  kubectl  get  configmaps 
+ 1273  kubectl  get  configmaps   -n ashu 
+ 1274  kubectl  get  cm  -n ashu 
+ 1275  kubectl create configmap  ashucm1 --from-literal  x=web3  -n ashu 
+ 1276  kubectl get  cm -n ashu 
+ 1277  kubectl describe  cm ashucm1  -n ashu 
+ 1278  ls
+ 1279  cp  ashuenvpod.yml    configmapuse.yml 
+ 1280  ls
+ 1281  vim configmapuse.yml 
+ 1282  cat configmapuse.yml 
+ 1283  kubectl apply -f  configmapuse.yml  
+ 1284  kubectl get po -n ashu 
+ 1285  kubectl expose pod ashuenvpod --type NodePort  --port 80 -n ashu 
+ 1286  kubectl get svc -n ashu 
+ 1287  kubectl get po -n ashu 
+ 1288  kubectl his
+ 1289  history 
+ 1290  kubectl get  svc -n ashu 
+ 1291  kubectl  run  ashualpod  --image=alpine  --dry-run  -o yaml 
+ 1292  kubectl  run  ashualpod  --image=alpine  --dry-run  -o yaml  >alpine.yml 
+ 1293  vim  alpine.yml 
+ 1294  cat alpine.yml 
+ 1295  kubectl apply  -f alpine.yml  
+ 1296  kubectl get po -n ashu 
+ 1297  vim  alpine.yml 
+ 1298  cat alpine.yml 
+ 1299  kubectl apply  -f alpine.yml 
+ 1300  kubectl get  po -n ashu 
+ 1301  kubectl replace -f  alpine.yml  --force 
+ 1302  kubectl get po -n ashu 
+ 1303  kubectl logs   ashualpod    -n ashu 
+ 1304  history 
+ 1305  kubectl logs   ashualpod    -n ashu 
+ 1306  kubectl logs -f  ashualpod    -n ashu 
+ 1307  history 
+ 1308  ls
+ 1309  vim   alpine.yml 
+ 1310  kubectl explain pods.spec.containers  |  less
+ 1311  history 
+ 1312  cd
+ 1313  ls
+ 1314  cp -rvf  day4/  dockerk8sciscojune152020/
+ 1315  history   |   tail -200
+ 1316  history   |   tail -300
+ 1317  history   |   tail -300   >dockerk8sciscojune152020/day4hist.txt

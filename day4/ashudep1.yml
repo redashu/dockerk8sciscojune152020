@@ -1,0 +1,27 @@
+apiVersion: apps/v1   #  same as  RS  
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:   #  label of  deployment
+    app: ashudep1
+  name: ashudep1   #  name of deployment 
+spec:
+  replicas: 2   #  it will create replicaset  and rs  will create one POD 
+  selector:
+    matchLabels:
+      app: ashudep1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: ashudep1  #  label of po
+    spec:
+      containers:
+      - image: dockerashu/ashuweb:june182020  #  docker image 
+        name: ashuweb  # name of container 
+        env:
+        - name: page
+          value: web2
+        resources: {}
+status: {}

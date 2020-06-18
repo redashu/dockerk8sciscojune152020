@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ReplicationController 
+metadata:
+ name: ashurc1  #  name of replication controller
+ namespace: ashu
+ labels:
+  x: ashurcc
+
+spec:
+ replicas: 3    #  no of pod we want to have in every conditition 
+ template:
+  metadata:  #  from here to below everything is POd file 
+   name: ashupod1   #  this name pod will be created   these days this is an optional field 
+   labels:
+    x: helloashu1    #  label of pod by rc 
+  spec: 
+   containers:
+   - name: ashuc1
+     image: nginx
+     ports:
+     - containerPort: 80 
