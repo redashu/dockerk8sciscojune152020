@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: emppod
+  name: emppod
+  namespace: ashu   #  namespace info
+spec:
+  imagePullSecret:
+  - name: azurereg
+  volumes:   #  this section is to create a kubernetes volume 
+  - name: ashuvol1  #  name of volume 
+    emptyDir: {}    #  it will a random location directory on scheduled worker node 
+  containers:
+  - image: azurecr.io/alpine:v1
+    name: emppod
+    volumeMounts:
+    - name: ashuvol1   #  same volume that we created above 
+      mountPath:  /mnt/cisco   #  this mount path will be created automatically in pod 
+    command: ["/bin/sh","-c","while true ; do date  >>/mnt/cisco/out.txt; sleep 5 ; done"]
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+  serviceaccount: default 
+status: {}

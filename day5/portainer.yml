@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: emppod
+  name: emppod
+  namespace: ashu   #  namespace info
+spec:
+  nodeName: ip-172-31-71-55.ec2.internal   # static  scheduling  ip/host of worker node
+  volumes:   #  this section is to create a kubernetes volume 
+  - name: ashuvol1  #  name of volume 
+    hostPath:   #  looking  for some data from worker node
+     path: /var/run/docker.sock   #  Linux host  configuration directory 
+     type: Socket   #  this is a directory 
+  containers:
+  - image: portainer/portainer
+    name: emppod
+    volumeMounts:
+    - name: ashuvol1   #  same volume that we created above 
+      mountPath: /var/run/docker.sock   #  this mount path will be created automatically in pod 
+    ports:
+    - containerPort: 9000   # port of portainer  web ui 

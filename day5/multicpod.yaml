@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: webpod
+  name: webpod
+  namespace: ashu  #  namespace info
+spec:
+  volumes:
+  - name: ashuvol2
+    emptyDir: {}
+  containers:
+  - image: nginx
+    name: webpod
+    volumeMounts:
+    - name: ashuvol2
+      mountPath: /usr/share/nginx/html     # web directory location of Nginx 
+    ports:
+    - containerPort: 80
+  - image: alpine  #  helper container image
+    name: ashuc2
+    volumeMounts:
+    - name: ashuvol2
+      mountPath: /mnt/data   # mount path inside alpine container
+    command: ["/bin/sh","-c","while true;do echo '<input>' >>/mnt/data/index.html ; sleep 5 ; done "]

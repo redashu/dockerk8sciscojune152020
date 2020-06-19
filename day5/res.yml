@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: ashu-resource
+  name: ashu-resource
+spec:
+  containers:
+  - command:
+    - ping
+    - fb.com
+    image: alpine
+    name: ashu-resource
+    resources:    #  dynamic  resources 
+     limits:
+      cpu: "1"   #  max  1  core  cpu 
+     requests:
+      cpu: "0.5"
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

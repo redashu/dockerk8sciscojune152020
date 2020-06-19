@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: ashudb
+  name: ashudb
+  namespace: ashu  #  namespace 
+spec:
+  volumes:
+  - name: ashudbvol2
+    nfs:
+     server: 172.31.55.172
+     path: /data/ashu  # n ew 
+  containers:
+  - image: mysql
+    name: ashudb
+    volumeMounts:
+    - name: ashudbvol2
+      mountPath: /var/lib/mysql   #  data directory of MYSQL server 
+    env:     # introducing  env variable here 
+    - name: MYSQL_ROOT_PASSWORD
+      valueFrom:
+       secretKeyRef:
+        name: ashusec1   #  name  of secret
+        key: sqlpass   #  key of secret
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

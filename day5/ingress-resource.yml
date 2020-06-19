@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ashu-ingress  #  name of ingress resource 
+  namespace: ashu  # namespace 
+spec:
+  rules:  #  we are defining rules 
+  - host: coolk8s.ashutoshh.in   #  this will be used by End user 
+    http:
+      paths:
+      - backend:
+          serviceName: ashufinalday   #  name of server where ingress resource will forward traffic 
+          servicePort: 80  #  port  of  service ip 

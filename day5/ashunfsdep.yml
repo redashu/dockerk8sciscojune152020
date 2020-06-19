@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: ashuwebdep
+  name: ashuwebdep
+  namespace: ashu   #  namespace info
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ashuwebdep
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: ashuwebdep
+    spec:
+      volumes:
+      - name: ashunfsvol1  # name of VOlume 
+        nfs:
+         server: 172.31.55.172   #  IP of NFS  server  
+         path: /data/ec2-user   #  shared location on NFS  server
+      containers:
+      - image: nginx
+        name: nginx
+        volumeMounts:
+        - name: ashunfsvol1
+          mountPath: /var/log/nginx   #  location of logs for Nginx web server 
+        resources: {}
+status: {}
